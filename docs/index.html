@@ -138,7 +138,7 @@
                 <a href="#subdomain-setup">Subdomain Setup</a>
                 <a href="#dns-management">DNS Management</a>
                 <a href="#minecraft-servers">Minecraft Servers</a>
-                <a href="#api-reference">API Reference</a>
+                <a href="#cloudflare-pages">Cloudflare Pages</a>
                 <a href="#troubleshooting">Troubleshooting</a>
             </nav>
         </aside>
@@ -166,10 +166,10 @@
                 
                 <h3>2. Configure DNS Records</h3>
                 <div class="code-block">
-                    Type: A
+                    Type: A/CNAME/etc..
                     Name: myproject
                     Value: your-server-ip
-                    TTL: 3600
+                    TTL: 3600 (follow up the tutorial on the github page)
                 </div>
             </section>
 
@@ -184,6 +184,7 @@
                     <li>CNAME Records</li>
                     <li>TXT Records</li>
                     <li>MX Records</li>
+                    <li>SRV Records</li>
                 </ul>
             </section>
 
@@ -191,23 +192,29 @@
                 <h2>Minecraft Servers</h2>
                 <p>Host your Minecraft server with a custom subdomain.</p>
                 
-                <h3>Server Configuration</h3>
+                <h3>Domain Setup</h3>
                 <div class="code-block">
-                    server-ip: 0.0.0.0
-                    server-port: 25565
+                    CNAME pointing to the server IP (example: serverip.creepers.sbs -> 8.8.8.8) <br>
+                    SRV pointing to the CNAME with the MINECRAFT service and TCP protocol <br> (example: _minecraft._tcp.creepers.sbs priority:0 weight:5 port:25565 target: the CNAME record) <br>
+<br>
+                    The server has to have these configs on:
                     enable-query: true
                     query.port: 25565
                 </div>
             </section>
 
-            <section id="api-reference" class="docs-section">
-                <h2>API Reference</h2>
-                <p>Manage your subdomain programmatically using our REST API.</p>
+            <section id="cloudflare-pages" class="docs-section">
+                <h2>Set up the project</h2>
+                <p>First of all create the Cloudflare page:</p>
                 
-                <h3>Authentication</h3>
+                <h3>1. Enter your dashboard</h3>
+                <p>Create a page on CLoudflare using your files/github/gitlab and get it up and running</p>
+                
+                <h3>2. Configure your own subdomain</h3>
+                <p>Register your CNAME record and point it to Cloudflare pages using the settings</p>
                 <div class="code-block">
-                    GET /api/v1/domains
-                    Authorization: Bearer YOUR_API_KEY
+                    Type: CNAME
+                    example.creepers.sbs -> something.pages.dev TLL:auto
                 </div>
             </section>
 
@@ -216,12 +223,12 @@
                 <p>Common issues and their solutions.</p>
                 
                 <h3>DNS Propagation</h3>
-                <p>DNS changes can take up to 48 hours to propagate globally. However, most changes are visible within 15-30 minutes.</p>
+                <p>DNS changes can take up to 48 hours to propagate globally. However, most changes are visible within 15-30 minutes after the approval.</p>
                 
                 <h3>Common Issues</h3>
                 <ul>
-                    <li>DNS_PROBE_FINISHED_NXDOMAIN</li>
-                    <li>ERR_NAME_NOT_RESOLVED</li>
+                    <li>Username not valid (Github)</li>
+                    <li>Domain already taken</li>
                     <li>Invalid DNS configuration</li>
                 </ul>
             </section>
