@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Basic SEO -->
+<meta name="description" content="Support creepers.sbs and help keep our free subdomain service running. Your donations help maintain and improve our services for the entire community.">
+<meta name="keywords" content="donate, support, creepers.sbs, CreeperHUB, minecraft hosting, free subdomains, CreeperCraft">
+<meta name="author" content="CreeperHUB">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://creepers.sbs/donate">
+<meta property="og:title" content="Support creepers.sbs - Help Keep Free Subdomains Running">
+<meta property="og:description" content="Support our free subdomain service and help us maintain quality hosting for the Minecraft community. Every donation makes a difference!">
+<meta property="og:site_name" content="creepers.sbs">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@GiocoliereDev">
+<meta name="twitter:creator" content="@GiocoliereDev">
+<meta name="twitter:title" content="Support creepers.sbs - Help Keep Free Subdomains Running">
+<meta name="twitter:description" content="Support our free subdomain service and help us maintain quality hosting for the Minecraft community. Every donation makes a difference!">
+
+<!-- Discord Embed -->
+<meta name="theme-color" content="#025d32">
+<meta property="discord:invite" content="Ttyg95fszY">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://creepers.sbs/donate">
+
+<!-- Language -->
+<meta property="og:locale" content="en_US">
+
+<!-- Cache Control -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+    <title>Support Us - creepers.sbs</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="/assets/img/logo.png" type="image/png">
+    <style>
+        /* Donation page specific styles */
+        .donate-hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .donate-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .donate-hero p {
+            color: var(--primary-lighter);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .donate-options {
+            padding: 4rem 0;
+        }
+
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .donate-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .donate-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .donate-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .donate-card .icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .donate-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .donate-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: white;
+            background-color: var(--primary);
+            transition: background-color 0.3s;
+        }
+
+        .donate-link:hover {
+            background-color: var(--hover);
+        }
+
+        .donate-link.ko-fi {
+            background-color: #29abe0;
+        }
+
+        .donate-link.ko-fi:hover {
+            background-color: #228db3;
+        }
+
+        .donate-link.liberapay {
+            background-color: #f6c915;
+            color: #1a171b;
+        }
+
+        .donate-link.liberapay:hover {
+            background-color: #d4ac12;
+        }
+
+        .donate-link.patreon {
+            background-color: #ff424d;
+        }
+
+        .donate-link.patreon:hover {
+            background-color: #e63e47;
+        }
+
+        .donate-link.paypal {
+            background-color: #003087;
+        }
+
+        .donate-link.paypal:hover {
+            background-color: #002670;
+        }
+
+        @media (max-width: 768px) {
+            .donate-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="/assets/img/logo.png" alt="creepers.sbs logo">
+                    <span>creepers.sbs</span>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/docs">Documentation</a>
+                    <a href="https://github.com/creepersbs">GitHub</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Donation Hero -->
+    <section class="donate-hero">
+        <div class="container">
+            <h1>Support Our Project</h1>
+            <p>Help us keep creepers.sbs free and running smoothly. Your support enables us to maintain and improve our services for the entire community.</p>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="donate-options">
+        <div class="container">
+            <div class="donate-grid">
+                <!-- Support CreeperCraft -->
+                <div class="donate-card">
+                    <div class="icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Support CreeperCraft</h3>
+                    <p>Help maintain and improve CreeperCraft, one of CreeperHUB's main projects.</p>
+                    <div class="donate-links">
+                        <a href="https://ko-fi.com/creepercraft" class="donate-link ko-fi" target="_blank">
+                            <i class="fas fa-coffee"></i> Support on Ko-fi
+                        </a>
+                        <a href="https://liberapay.com/creepercraft/" class="donate-link liberapay" target="_blank">
+                            <i class="fas fa-heart"></i> Support on Liberapay
+                        </a>
+                        <a href="https://www.patreon.com/creepercraftoff" class="donate-link patreon" target="_blank">
+                            <i class="fab fa-patreon"></i> Support on Patreon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Support CreeperHUB -->
+                <div class="donate-card">
+                    <div class="icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Support CreeperHUB</h3>
+                    <p>Help us maintain all CreeperHUB projects, including creepers.sbs.</p>
+                    <div class="donate-links">
+                        <a href="https://liberapay.com/creeperhub/" class="donate-link liberapay" target="_blank">
+                            <i class="fas fa-heart"></i> Support on Liberapay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Support Developer -->
+                <div class="donate-card">
+                    <div class="icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Support the Developer</h3>
+                    <p>Support the developer directly to help maintain and create more projects.</p>
+                    <div class="donate-links">
+                        <a href="https://ko-fi.com/gioco" class="donate-link ko-fi" target="_blank">
+                            <i class="fas fa-coffee"></i> Support on Ko-fi
+                        </a>
+                        <a href="https://liberapay.com/giocoliere/" class="donate-link liberapay" target="_blank">
+                            <i class="fas fa-heart"></i> Support on Liberapay
+                        </a>
+                        <a href="https://patreon.com/giocoliere" class="donate-link patreon" target="_blank">
+                            <i class="fab fa-patreon"></i> Support on Patreon
+                        </a>
+                        <a href="https://paypal.me/giocoliere" class="donate-link paypal" target="_blank">
+                            <i class="fab fa-paypal"></i> Support on PayPal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <img src="/assets/img/logo.png" alt="creepers.sbs logo">
+                <span>creepers.sbs</span>
+            </div>
+            <p>© <script>document.write(new Date().getFullYear())</script> CreeperHUB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
