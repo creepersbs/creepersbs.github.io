@@ -1,0 +1,206 @@
+:root {
+  /* Creepers.sbs Primary Theme Colors */
+  --primary: #025d32;
+  --primary-light: #7fcea5;
+  --primary-lighter: #b8e6d0;
+  --hover: #024526;
+
+  /* Main Background & Text Colors */
+  --body-background-color: #b8e6d0; /* Light mint */
+  --body-text-color: #025d32; /* Primary dark green */
+
+  /* Card Colors */
+  --card-background-color: #ffffff;
+  --card-border-color: #7fcea5; /* Lighter green for subtle separation */
+
+  /* Navigation Colors */
+  --nav-background-color: #025d32;
+  --nav-border-bottom-color: #7fcea5;
+  --nav-current-border-bottom-color: #7fcea5; /* Use primary-light for 'active' nav */
+
+  /* Status Colors */
+  --down-border-left-color: #eb3b5a;
+  --down-background-color: #ffd0d2;
+  --degraded-border-left-color: #f7b731;
+  --up-border-left-color: #20bf6b;
+
+  /* Tag Colors */
+  --tag-color: #ffffff;
+  --tag-up-background-color: #20bf6b;
+  --tag-down-background-color: #eb3b5a;
+  --tag-degraded-background-color: #f7b731;
+
+  /* Change Background Color */
+  --change-background-color: #7fcea5;
+
+  /* Button Colors */
+  --error-button-border-color: #eb3b5a;
+  --error-button-background-color: #eb3b5a;
+  --error-button-color: #ffffff;
+
+  --submit-button-border-color: #025d32;
+  --submit-button-background-color: #7fcea5;
+  --submit-button-color: #025d32;
+
+  /* Graph Opacity & Filter */
+  --graph-opacity: 1;
+  --graph-filter: none;
+}
+
+/* Gradient Background (optional, for highlights or sections) */
+body {
+  background: var(--body-background-color);
+  color: var(--body-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Optional: Use a gradient for hero/banner/section backgrounds */
+.hero,
+.banner,
+.gradient-bg {
+  background-image: linear-gradient(135deg, #025d32, #7fcea5, #b8e6d0);
+  background-size: 200% 200%;
+  animation: gradient 18s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Card Styles */
+.card,
+.feature-card,
+.benefit-item {
+  background: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(2,93,50,0.04);
+}
+
+/* Navigation */
+header {
+  background-color: var(--nav-background-color);
+  color: white;
+}
+nav {
+  border-bottom: 1.5px solid var(--nav-border-bottom-color);
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary-light);
+  border-bottom: 2.5px solid var(--nav-current-border-bottom-color);
+}
+
+/* Status Borders */
+.status-up {
+  border-left: 5px solid var(--up-border-left-color);
+}
+.status-down {
+  border-left: 5px solid var(--down-border-left-color);
+  background: var(--down-background-color);
+}
+.status-degraded {
+  border-left: 5px solid var(--degraded-border-left-color);
+}
+
+/* Tag Styles */
+.tag {
+  background: var(--tag-up-background-color);
+  color: var(--tag-color);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+.tag.up { background: var(--tag-up-background-color);}
+.tag.down { background: var(--tag-down-background-color);}
+.tag.degraded { background: var(--tag-degraded-background-color);}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+.btn-primary:hover {
+  background-color: var(--hover);
+  color: white;
+}
+.btn-error {
+  border: 1.5px solid var(--error-button-border-color);
+  background: var(--error-button-background-color);
+  color: var(--error-button-color);
+}
+.btn-submit {
+  border: 1.5px solid var(--submit-button-border-color);
+  background: var(--submit-button-background-color);
+  color: var(--submit-button-color);
+}
+.btn-submit:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Loader */
+.loader-wrapper {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: white;
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s;
+}
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Section backgrounds */
+.benefits {
+  background-color: var(--primary-lighter);
+}
+
+footer {
+  background: #111827;
+  color: white;
+  padding: 3rem 0;
+}
+
+/* Responsive Navigation & Layout (keep as before) */
+@media (max-width: 768px) {
+  .nav-links {
+    background: var(--primary);
+  }
+  .nav-links a.active {
+    border-bottom: 2.5px solid var(--primary-light);
+  }
+}
